@@ -11,3 +11,5 @@ RUN docker-php-ext-configure zip && \
 RUN apk add --no-cache pcre-dev $PHPIZE_DEPS \
   && pecl install redis \
   && docker-php-ext-enable redis.so
+
+RUN curl -s https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
